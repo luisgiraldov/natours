@@ -97,6 +97,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   padding: 0 10px;
+  margin-bottom: 40px;
 }
 
 .heading-primary-main {
@@ -117,6 +118,8 @@ body {
   text-decoration: none;
   padding: 15px 40px;
   display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
 }
 
 .btn-white {
@@ -148,6 +151,10 @@ body {
     .logo{
       height: 35px;
     }
+
+    .text-box {
+      margin-top: -100px;
+    }
     
     .heading-primary-main {
       font-size: 60px;
@@ -166,6 +173,17 @@ body {
       /* animation call */
       animation-name: moveInFromRight;
       animation-duration: 3s;
+    }
+
+    /* transitioning hover and active states to animate */
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,.3);
+    }
+
+    .btn:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba(0,0,0,.3);
     }
 }
 
