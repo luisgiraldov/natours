@@ -14,6 +14,7 @@ function App() {
             <div className="heading-primary-main">outdoors</div>
             <div className="heading-primary-sub">is where life happens</div>
           </h1>
+          <a href="#" className="btn btn-white"></a>
         </div>
       </header>
     </div>

@@ -94,10 +94,42 @@ body {
   font-size: 60px;
   letter-spacing: 35px;
   font-weight: 400;
+  
+  /* animation call */
+  animation-name: moveInFromLeft;
+  animation-duration: 3s;
 }
 
 .heading-primary-sub {
   font-size: 20px;
   letter-spacing: 17.4px;
   font-weight: 700;
+
+  /* animation call */
+  animation-name: moveInFromRight;
+  animation-duration: 3s;
+}
+
+@keyframes moveInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
