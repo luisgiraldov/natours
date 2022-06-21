@@ -53,62 +53,125 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: 15px;
 }
 
 .header {
   position: relative;
-  height: 95vh;
+  height: 100vh;
   background-image: linear-gradient(to right bottom,
                                   rgba(66, 134, 244,0.8),
                                   rgba(55, 59, 68, 0.8)),
                     url(./img/hero.jpg);
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 25px;
+  left: 25px;
 }
 
-.logo{
-  height: 35px;
+.logo {
+  height: 20px;
 }
 
 .text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* 
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  */
+  text-align: center;
 }
 
 .heading-primary {
   color: white;
   text-transform: uppercase;
+  text-align: center;
+  padding: 0 10px;
 }
 
 .heading-primary-main {
-  font-size: 60px;
-  letter-spacing: 35px;
-  font-weight: 400;
-  
-  /* animation call */
-  animation-name: moveInFromLeft;
-  animation-duration: 3s;
+  font-size: 40px;
+  letter-spacing: 10px;
+  font-weight: 700;
 }
 
 .heading-primary-sub {
   font-size: 20px;
-  letter-spacing: 17.4px;
-  font-weight: 700;
-
-  /* animation call */
-  animation-name: moveInFromRight;
-  animation-duration: 3s;
+  letter-spacing: 8.4px;
+  font-weight: 900;
 }
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+}
+
+.btn-white {
+  background-color: white;
+  color: #777;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    body {
+      padding: 30px;
+    }
+    
+    .header {
+      clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    }
+
+    .logo-box {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+    }
+    
+    .logo{
+      height: 35px;
+    }
+    
+    .heading-primary-main {
+      font-size: 60px;
+      letter-spacing: 35px;
+      font-weight: 400;
+      
+      /* animation call */
+      animation-name: moveInFromLeft;
+      animation-duration: 3s;
+    }
+    
+    .heading-primary-sub {
+      letter-spacing: 17.4px;
+      font-weight: 700;
+    
+      /* animation call */
+      animation-name: moveInFromRight;
+      animation-duration: 3s;
+    }
+}
+
+/* ================================= 
+  Animations
+==================================== */
 
 @keyframes moveInFromLeft {
   0% {
@@ -132,17 +195,4 @@ body {
     opacity: 1;
     transform: translate(0);
   }
-}
-
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 15px 40px;
-  display: inline-block;
-}
-
-.btn-white {
-  background-color: white;
-  color: #777;
 }
