@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './img/logo-white.png';
 import './App.css';
+import { Link } from "react-router-dom";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
             <div className="heading-primary-main">outdoors</div>
             <div className="heading-primary-sub">is where life happens</div>
           </h1>
-          <a href="#" className="btn btn-white"></a>
+          <Link to="#" className="btn btn-white">discover our tours</Link>
         </div>
       </header>
     </div>
