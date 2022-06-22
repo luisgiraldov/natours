@@ -1,5 +1,8 @@
+
+/* ================================= 
+  COLORS
+==================================== */
 /*
-COLORS:
 
 Light green: #7ed56f
 Medium green: #55c57a
@@ -36,24 +39,28 @@ RGB: (23, 80, 172)
 Name: Dark Powder Blue
 Hex: #003396
 RGB: (0, 51, 150)
-
-
 */
-
 
 @import-normalize; /* bring in normalize.css styles */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html {
+  /* Getting 10px (if browser default is 16px) as root font size for easy rem measurement */
+  font-size: 62.5%;
 }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 15px;
+  padding: 1.5rem;
 }
 
 .header {
@@ -71,17 +78,17 @@ body {
   align-items: center;
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
-  top: 25px;
-  left: 25px;
+  top: 2.5rem;
+  left: 2.5rem;
 }
 
-.logo {
-  height: 20px;
+.header__logo {
+  height: 2rem;
 }
 
-.text-box {
+.header__text-box {
   /* 
     position: absolute;
     top: 40%;
@@ -96,19 +103,19 @@ body {
   color: white;
   text-transform: uppercase;
   text-align: center;
-  padding: 0 10px;
-  margin-bottom: 40px;
+  padding: 0 1rem;
+  margin-bottom: 4rem;
 }
 
-.heading-primary-main {
-  font-size: 40px;
-  letter-spacing: 10px;
+.heading-primary--main {
+  font-size: 4rem;
+  letter-spacing: 1rem;
   font-weight: 700;
 }
 
-.heading-primary-sub {
-  font-size: 20px;
-  letter-spacing: 8.4px;
+.heading-primary--sub {
+  font-size: 2rem;
+  letter-spacing: .8rem;
   font-weight: 900;
 }
 
@@ -116,13 +123,14 @@ body {
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 10rem;
   transition: all .2s;
+  position: relative;
 }
 
-.btn-white {
+.btn--white {
   background-color: white;
   color: #777;
 }
@@ -135,30 +143,30 @@ body {
   and (-webkit-min-device-pixel-ratio: 1) {
 
     body {
-      padding: 30px;
+      padding: 3rem;
     }
     
     .header {
       clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     }
 
-    .logo-box {
+    .header__logo-box {
       position: absolute;
-      top: 40px;
-      left: 40px;
+      top: 4rem;
+      left: 4rem;
     }
     
-    .logo{
-      height: 35px;
+    .header__logo{
+      height: 3.5rem;
     }
 
-    .text-box {
-      margin-top: -100px;
+    .header__text-box {
+      margin-top: -10rem;
     }
     
-    .heading-primary-main {
-      font-size: 60px;
-      letter-spacing: 35px;
+    .heading-primary--main {
+      font-size: 6rem;
+      letter-spacing: 3.5rem;
       font-weight: 400;
       
       /* animation call */
@@ -166,8 +174,8 @@ body {
       animation-duration: 3s;
     }
     
-    .heading-primary-sub {
-      letter-spacing: 17.4px;
+    .heading-primary--sub {
+      letter-spacing: 1.7rem;
       font-weight: 700;
     
       /* animation call */
@@ -175,16 +183,48 @@ body {
       animation-duration: 3s;
     }
 
+    .btn--animated {
+      /* animation call */
+      animation-name: moveInFromBottom;
+      animation-duration: 3s;
+      /* if we add a delay to this animation, animation-fill-mode:backwards would set 
+      the values of the elements to its 0% animation to avoid, the rendering while the delay it's up */
+      /* animation-fill-mode: backwards; */
+    }
+
     /* transitioning hover and active states to animate */
     .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0,0,0,.3);
+      transform: translateY(-.3rem);
+      box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
     }
 
     .btn:active {
-      transform: translateY(-1px);
-      box-shadow: 0 5px 10px rgba(0,0,0,.3);
+      transform: translateY(-.1rem);
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,.3);
     }
+
+    /* Expanding animation for button */
+    /* .btn::after {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 10rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -10;
+      transition: all .4s;
+    }
+
+    .btn-white::after {
+      background-color: white;
+    }
+
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    } */
 }
 
 /* ================================= 
@@ -194,7 +234,7 @@ body {
 @keyframes moveInFromLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
 
   100% {
@@ -206,7 +246,19 @@ body {
 @keyframes moveInFromRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
   }
 
   100% {
