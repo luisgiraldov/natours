@@ -1,0 +1,66 @@
+/* ================================= 
+    COLORS
+==================================== */
+/* 
+Blue gradient (dark ocean)
+#4286f4 -> rgb(66, 134, 244)
+#373B44 -> rgb(55, 59, 68)
+
+Blue scheme color (light to dark)
+Name: Light Sky Blue
+Hex: #86CEFA
+RGB: (134, 206, 250)
+
+Name: Aero
+Hex: #73B9EE
+RGB: (115, 185, 238)
+
+Name: United Nations Blue
+Hex: #5494DA
+RGB: (84, 148, 218)
+
+Name: Celtic Blue
+Hex: #3373C4
+RGB: (51, 115, 196)
+
+Name: Sapphire
+Hex: #1750AC
+RGB: (23, 80, 172)
+
+Name: Dark Powder Blue
+Hex: #003396
+RGB: (0, 51, 150)
+*/
+
+$color-bg-light-green: #7ed56f;
+$color-bg-medium-green: #55c57a;
+$color-bg-dark-green: #28b485;
+$color-white: #fff;
+$color-dark-grey: #777;
+$color-black: #000;
+/*Gradient*/
+$color-blue-for-gradient: #4286f4;
+$color-light-black: #373b44;
+/* Blue scheme color (light to dark) */
+$color-light-sky-blue: #86cefa;
+$color-aero: #73b9ee;
+$color-united-nations-blue: #5494da;
+$color-celtic-blue: #3373c4;
+$color-sapphire: #1750ac;
+$color-dark-powder-blue: #003396;
+
+/* ================================= 
+    Media Queries
+==================================== */
+
+@mixin tablet {
+  @media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    @content;
+  }
+}

@@ -1,0 +1,26 @@
+@use "./mixin.scss" as mixin;
+@import-normalize; /* bring in normalize.css styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Getting 10px (if browser default is 16px) as root font size for easy rem measurement */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 1.5rem;
+  @include mixin.desktop {
+    & {
+      padding: 3rem;
+    }
+  }
+}
