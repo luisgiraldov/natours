@@ -1,0 +1,15 @@
+@use "../../../mixin.scss" as mixin;
+
+.heading-tertiary {
+	font-size: mixin.$default-font-size;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 1.5rem;
+}
+
+.paragraph {
+	font-size: mixin.$default-font-size;
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+}

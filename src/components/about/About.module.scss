@@ -1,0 +1,46 @@
+@use "../../mixin.scss" as mixin;
+
+.section-about {
+	background-color: mixin.$color-light-grey;
+	padding: 25rem 0;
+	margin-top: -20vh;
+
+	&__title--container {
+		text-align: center;
+	}
+
+	&__content--container {
+		margin: 0 auto;
+		max-width: mixin.$grid-width;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: mixin.$grid-gap;
+	}
+}
+
+.btn-text {
+	&:link,
+	&:visited {
+		font-size: mixin.$default-font-size;
+		color: mixin.$color-united-nations-blue;
+		display: inline-block;
+		text-decoration: none;
+		border-bottom: 1px solid mixin.$color-united-nations-blue;
+		padding: 3px;
+		transition: all .3s;
+	}
+
+	&:hover {
+		background-color: mixin.$color-united-nations-blue;
+		color: mixin.$color-white;
+		//button effect up
+		box-shadow: 0 1rem 2rem rgba(mixin.$color-black, .15);
+		transform: translateY(-2px);
+	}
+
+	&:active {
+		//button effect down (clicked)
+		box-shadow: 0 .5rem 1rem rgba(mixin.$color-black, .15);
+		transform: translateY(0);
+	}
+}

@@ -1,203 +1,202 @@
 @use "../../mixin.scss" as mixin;
 
-@mixin linkStyle {
-  &:link,
-  &:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all 0.2s;
-    position: relative;
-  }
-}
-
 .header {
-  position: relative;
-  height: 100vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(mixin.$color-blue-for-gradient, 0.8),
-      rgba(mixin.$color-light-black, 0.8)
-    ),
-    url(../../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
+	position: relative;
+	height: 95vh;
+	background-image: linear-gradient(
+			to right bottom,
+			rgba(mixin.$color-blue-for-gradient, 0.8),
+			rgba(mixin.$color-light-black, 0.8)
+		),
+		url(../../img/hero.jpg);
+	background-size: cover;
+	background-position: top;
+	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
-  display: grid;
-  justify-content: center;
-  align-items: center;
+	display: grid;
+	justify-content: center;
+	align-items: center;
 
-  @include mixin.desktop {
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  }
-}
+	// @include mixin.desktop {
+	// 	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+	// }
 
-.header__logo-box {
-  position: absolute;
-  top: 2.5rem;
-  left: 2.5rem;
+	&__logo-box {
+		position: absolute;
+		top: 2.5rem;
+		left: 2.5rem;
 
-  @include mixin.desktop {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-  }
-}
+		@include mixin.desktop {
+			position: absolute;
+			top: 4rem;
+			left: 4rem;
+		}
+	}
 
-.header__logo {
-  height: 2rem;
+	&__logo {
+		height: 2rem;
 
-  @include mixin.desktop {
-    height: 3.5rem;
-  }
-}
+		@include mixin.desktop {
+			height: 3.5rem;
+		}
+	}
 
-.header__text-box {
-  /* 
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-*/
-  text-align: center;
+	&__text-box {
+		/* 
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    */
+		text-align: center;
 
-  @include mixin.desktop {
-    margin-top: -10rem;
-  }
+		@include mixin.desktop {
+			margin-top: -10rem;
+		}
+	}
 }
 
 .heading-primary {
-  color: mixin.$color-white;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 0 1rem;
-  margin-bottom: 4rem;
-}
+	color: mixin.$color-white;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 0 1rem;
+	margin-bottom: 4rem;
 
-.heading-primary--main {
-  font-size: 4rem;
-  letter-spacing: .5rem;
-  font-weight: 700;
+	&--main {
+		font-size: 4rem;
+		letter-spacing: 0.5rem;
+		font-weight: 700;
 
-  @include mixin.desktop {
-    font-size: 6rem;
-    letter-spacing: 3.5rem;
-    font-weight: 400;
+		@include mixin.desktop {
+			font-size: 6rem;
+			letter-spacing: 3.5rem;
+			font-weight: 400;
 
-    /* animation call */
-    animation-name: moveInFromLeft;
-    animation-duration: 3s;
-  }
-}
+			/* animation call */
+			animation-name: moveInFromLeft;
+			animation-duration: 3s;
+		}
+	}
 
-.heading-primary--sub {
-  font-size: 2rem;
-  letter-spacing: 0.8rem;
-  font-weight: 900;
+	&--sub {
+		font-size: 2rem;
+		letter-spacing: 0.8rem;
+		font-weight: 900;
 
-  @include mixin.desktop {
-    letter-spacing: 1.7rem;
-    font-weight: 700;
+		@include mixin.desktop {
+			letter-spacing: 1.7rem;
+			font-weight: 700;
 
-    /* animation call */
-    animation-name: moveInFromRight;
-    animation-duration: 3s;
-  }
+			/* animation call */
+			animation-name: moveInFromRight;
+			animation-duration: 3s;
+		}
+	}
 }
 
 .btn {
-  @include linkStyle;
-  @include mixin.desktop {
-    &:hover {
-      transform: translateY(-0.3rem);
-      box-shadow: 0 1rem 2rem rgba(mixin.$color-black, 0.3);
+	@include mixin.desktop {
+		&:hover {
+			transform: translateY(-0.3rem);
+			box-shadow: 0 1rem 2rem rgba(mixin.$color-black, 0.3);
+		}
+
+		&:active {
+			transform: translateY(-0.1rem);
+			box-shadow: 0 0.5rem 1rem rgba(mixin.$color-black, 0.3);
+		}
+	}
+
+	&:link,
+	&:visited {
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 1.5rem 4rem;
+		display: inline-block;
+		border-radius: 10rem;
+		transition: all 0.2s;
+		position: relative;
+		font-size: mixin.$default-font-size;
+	}
+
+	&--white {
+		background-color: mixin.$color-white;
+		color: mixin.$color-dark-grey;
+	}
+
+	&--animated {
+		@include mixin.desktop {
+			/* animation call */
+			animation-name: moveInFromBottom;
+			animation-duration: 3s;
+			/* if we add a delay to this animation, animation-fill-mode:backwards would set 
+          the values of the elements to its 0% animation to avoid, the rendering while the delay it's up */
+			/* animation-fill-mode: backwards; */
+		}
+	}
+
+	/* Expanding animation for button */
+	/* &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -10;
+        transition: all .4s;
     }
 
-    &:active {
-      transform: translateY(-0.1rem);
-      box-shadow: 0 0.5rem 1rem rgba(mixin.$color-black, 0.3);
+    &-white::after {
+        background-color: white;
     }
-  }
-}
 
-.btn--white {
-  background-color: mixin.$color-white;
-  color: mixin.$color-dark-grey;
+    &:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    } */
 }
-
-.btn--animated {
-  @include mixin.desktop {
-    /* animation call */
-    animation-name: moveInFromBottom;
-    animation-duration: 3s;
-    /* if we add a delay to this animation, animation-fill-mode:backwards would set 
-        the values of the elements to its 0% animation to avoid, the rendering while the delay it's up */
-    /* animation-fill-mode: backwards; */
-  }
-}
-
-/* Expanding animation for button */
-/* .btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -10;
-    transition: all .4s;
-}
-
-.btn-white::after {
-    background-color: white;
-}
-
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-} */
 
 /* ================================= 
     Animations
 ==================================== */
 
 @keyframes moveInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
+	0% {
+		opacity: 0;
+		transform: translateX(-10rem);
+	}
 
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
 }
 
 @keyframes moveInFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
+	0% {
+		opacity: 0;
+		transform: translateX(10rem);
+	}
 
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
 }
 
 @keyframes moveInFromBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(10rem);
-  }
+	0% {
+		opacity: 0;
+		transform: translateY(10rem);
+	}
 
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
 }
