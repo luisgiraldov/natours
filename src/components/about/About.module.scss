@@ -13,8 +13,12 @@
 		margin: 0 auto;
 		max-width: mixin.$grid-width;
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
 		gap: mixin.$grid-gap;
+
+		@include mixin.desktop {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 }
 
@@ -27,20 +31,82 @@
 		text-decoration: none;
 		border-bottom: 1px solid mixin.$color-united-nations-blue;
 		padding: 3px;
-		transition: all .3s;
+		transition: all 0.3s;
 	}
 
 	&:hover {
 		background-color: mixin.$color-united-nations-blue;
 		color: mixin.$color-white;
 		//button effect up
-		box-shadow: 0 1rem 2rem rgba(mixin.$color-black, .15);
+		box-shadow: 0 1rem 2rem rgba(mixin.$color-black, 0.15);
 		transform: translateY(-2px);
 	}
 
 	&:active {
 		//button effect down (clicked)
-		box-shadow: 0 .5rem 1rem rgba(mixin.$color-black, .15);
+		box-shadow: 0 0.5rem 1rem rgba(mixin.$color-black, 0.15);
 		transform: translateY(0);
 	}
+}
+
+.composition {
+	position: relative;
+
+	&__photo {
+		position: absolute;
+		width: 55%;
+		box-shadow: 0 1.5rem 4rem rgba(mixin.$color-black, 0.4);
+		border-radius: 2px;
+		transition: all 0.3s;
+		//this gives the spaces between the outline (border) and the image
+		outline-offset: 2rem;
+
+		&--p1 {
+			left: 0;
+			top: 0rem;
+		}
+
+		&--p2 {
+			right: 0;
+			top: 4rem;
+		}
+
+		&--p3 {
+			left: 20%;
+			top: 12rem;
+		}
+
+		&:hover {
+			//outline (border) for image
+			outline: 1rem solid mixin.$color-dark-powder-blue;
+			transform: scale(1.05) translateY(-0.5rem);
+			box-shadow: 0 2.5rem 4rem rgba(mixin.$color-black, 0.5);
+			z-index: 20;
+		}
+	}
+
+	//.composition:hover composition__photo:not(:hover)
+	&:hover &__photo:not(:hover) {
+		//shrink elements that are not hovered (photos)
+		transform: scale(0.95);
+	}
+
+	// @include mixin.only-phones {
+	// 	&::after {
+	// 		content: "";
+	// 		display: inline-block;
+	// 		height: 10rem;
+	// 		width: 5rem;
+	// 	}
+	// }
+
+	// @include mixin.only-tablet {
+	// 	&::after {
+	// 		content: "";
+	// 		display: inline-block;
+	// 		height: 80rem;
+	// 		width: 20rem;
+	// 	}
+	// }
+	
 }

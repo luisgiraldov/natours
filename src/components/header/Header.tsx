@@ -1,7 +1,7 @@
-import logo from "../../img/logo-white.png";
 import { Link } from "react-router-dom";
 import { ReactElement } from "react";
 import Styles from "./Header.module.scss";
+import logo from '../../img/logo-white.png';
 
 const Header = (): ReactElement => {
 	return (
