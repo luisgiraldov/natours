@@ -3,8 +3,8 @@
 .btn--basic {
 	&:link,
 	&:visited {
-        text-decoration: none;
-        display: inline-block;
-        font-size: mixin.$default-font-size;
+		text-decoration: none;
+		display: inline-block;
+		font-size: mixin.$default-font-size;
 	}
 }

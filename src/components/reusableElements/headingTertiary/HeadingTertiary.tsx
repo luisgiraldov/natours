@@ -7,12 +7,8 @@ const HeadingTertiary: FC<{
 }> = ({ title, paragraph }): ReactElement => {
 	return (
 		<>
-			<h3 className={`${Styles["heading-tertiary"]}`}>
-				{title}
-			</h3>
-			<p className={`${Styles["paragraph"]}`}>
-				{paragraph}
-			</p>
+			<h3 className={`${Styles["heading-tertiary"]}`}>{title}</h3>
+			<p className={`${Styles["paragraph"]}`}>{paragraph}</p>
 		</>
 	);
 };

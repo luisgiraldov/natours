@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import Styles from "./Header.module.scss";
-import logo from '../../img/logo-white.png';
+import logo from "../../img/logo-white.png";
 import FilledButton from "../reusableElements/filledButton/FilledButton";
 
 const Header = (): ReactElement => {
@@ -22,7 +22,11 @@ const Header = (): ReactElement => {
 						is where life happens
 					</div>
 				</h1>
-				<FilledButton address="#" color="white" text="Discover our tours"  />
+				<FilledButton
+					address="#"
+					color="white"
+					text="Discover our tours"
+				/>
 			</div>
 		</header>
 	);

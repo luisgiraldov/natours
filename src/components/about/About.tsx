@@ -1,13 +1,12 @@
 import { ReactElement } from "react";
-import { Link } from "react-router-dom";
 import Styles from "./About.module.scss";
 import { aboutData } from "../../data/data";
 import HeadingSecondary from "../reusableElements/headingSecondary/HeadingSecondary";
 import HeadingTertiary from "../reusableElements/headingTertiary/HeadingTertiary";
-import nature1 from '../../img/nat-1-large.jpg';
-import nature2 from '../../img/nat-2-large.jpg';
-import nature3 from '../../img/nat-3-large.jpg';
-
+import nature1 from "../../img/nat-1-large.jpg";
+import nature2 from "../../img/nat-2-large.jpg";
+import nature3 from "../../img/nat-3-large.jpg";
+import GhostButton from "../reusableElements/ghostButton/GhostButton";
 
 const About = (): ReactElement => {
 	return (
@@ -26,9 +25,7 @@ const About = (): ReactElement => {
 						paragraph={aboutData[1].paragraph}
 					/>
 					{/* &rarr is arrow special character for more go to https://css-tricks.com/snippets/html/glyphs/*/}
-					<Link to="#" className={Styles["btn-text"]}>
-						Learn more &rarr;
-					</Link>
+					<GhostButton address="#" text="Learn more &rarr;" />
 				</div>
 				<div className={`${Styles["about-image-composition"]}`}>
 					<div className={`${Styles.composition}`}>

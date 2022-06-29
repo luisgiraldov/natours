@@ -1,0 +1,25 @@
+@use "../../../mixin.scss" as mixin;
+
+.btn {
+	&:link,
+	&:visited {
+        color: mixin.$color-united-nations-blue;
+        border-bottom: 1px solid mixin.$color-united-nations-blue;
+		padding: 3px;
+		transition: all 0.3s;
+    }
+
+    &:hover {
+		background-color: mixin.$color-united-nations-blue;
+		color: mixin.$color-white;
+		//button effect up
+		box-shadow: 0 1rem 2rem rgba(mixin.$color-black, 0.15);
+		transform: translateY(-2px);
+	}
+
+	&:active {
+		//button effect down (clicked)
+		box-shadow: 0 0.5rem 1rem rgba(mixin.$color-black, 0.15);
+		transform: translateY(0);
+	}
+}

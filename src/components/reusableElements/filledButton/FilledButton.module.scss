@@ -1,21 +1,21 @@
 @use "../../../mixin.scss" as mixin;
 
 .btn {
-    &:link,
+	&:link,
 	&:visited {
-        text-transform: uppercase;
-        padding: 1.5rem 4rem;
-        border-radius: 10rem;
+		text-transform: uppercase;
+		padding: 1.5rem 4rem;
+		border-radius: 10rem;
 		transition: all 0.2s;
 		position: relative;
-    }
+	}
 
-    &--white {
+	&--white {
 		background-color: mixin.$color-white;
 		color: mixin.$color-dark-grey;
 	}
 
-    &--animated {
+	&--animated {
 		@include mixin.desktop {
 			/* animation call */
 			animation-name: moveInFromBottom;
@@ -26,7 +26,7 @@
 		}
 	}
 
-    @include mixin.desktop {
+	@include mixin.desktop {
 		//simple lifting up button and down animation when clicking
 		&:hover {
 			transform: translateY(-0.3rem);

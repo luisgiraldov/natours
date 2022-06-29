@@ -11,28 +11,28 @@
 	background-size: cover;
 	background-position: top;
 
-    //skew the whole section
-    transform: skewY(-7deg);
-    margin-top: -10rem;
+	//skew the whole section
+	transform: skewY(-7deg);
+	margin-top: -10rem;
 
 	&__features-container {
-        @include mixin.grid-container;
+		@include mixin.grid-container;
 
 		@include mixin.desktop {
 			grid-template-columns: repeat(4, 1fr);
 		}
 	}
 
-    & > * {
-        //skew the oposite direction to put content back to original position
-        transform: skewY(7deg);
-    }
+	& > * {
+		//skew the oposite direction to put content back to original position
+		transform: skewY(7deg);
+	}
 
-    @include mixin.tablet {
-        padding: 20rem 6rem;
-    }
+	@include mixin.tablet {
+		padding: 20rem 6rem;
+	}
 
-    @include mixin.desktop {
-        padding: 20rem 0;
-    }
+	@include mixin.desktop {
+		padding: 20rem 0;
+	}
 }
