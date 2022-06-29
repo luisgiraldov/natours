@@ -1,0 +1,70 @@
+@use "../../../mixin.scss" as mixin;
+
+.btn {
+    &:link,
+	&:visited {
+        text-transform: uppercase;
+        padding: 1.5rem 4rem;
+        border-radius: 10rem;
+		transition: all 0.2s;
+		position: relative;
+    }
+
+    &--white {
+		background-color: mixin.$color-white;
+		color: mixin.$color-dark-grey;
+	}
+
+    &--animated {
+		@include mixin.desktop {
+			/* animation call */
+			animation-name: moveInFromBottom;
+			animation-duration: 3s;
+			/* if we add a delay to this animation, animation-fill-mode:backwards would set 
+          the values of the elements to its 0% animation to avoid, the rendering while the delay it's up */
+			/* animation-fill-mode: backwards; */
+		}
+	}
+
+    @include mixin.desktop {
+		//simple lifting up button and down animation when clicking
+		&:hover {
+			transform: translateY(-0.3rem);
+			box-shadow: 0 1rem 2rem rgba(mixin.$color-black, 0.3);
+		}
+
+		&:active {
+			transform: translateY(-0.1rem);
+			box-shadow: 0 0.5rem 1rem rgba(mixin.$color-black, 0.3);
+		}
+		//end of animation
+
+		&--white {
+			background-color: mixin.$color-white;
+			color: mixin.$color-dark-grey;
+		}
+
+		/* Expanding animation for button */
+		&::after {
+			content: "";
+			display: inline-block;
+			height: 100%;
+			width: 100%;
+			border-radius: 10rem;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -10;
+			transition: all 0.4s;
+		}
+
+		&--white::after {
+			background-color: white;
+		}
+
+		&:hover::after {
+			transform: scaleX(1.4) scaleY(1.6);
+			opacity: 0;
+		}
+	}
+}

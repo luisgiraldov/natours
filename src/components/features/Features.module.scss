@@ -11,6 +11,7 @@
 	background-size: cover;
 	background-position: top;
 
+    //skew the whole section
     transform: skewY(-7deg);
     margin-top: -10rem;
 
@@ -23,6 +24,7 @@
 	}
 
     & > * {
+        //skew the oposite direction to put content back to original position
         transform: skewY(7deg);
     }
 

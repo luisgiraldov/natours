@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import { ReactElement } from "react";
 import Styles from "./Header.module.scss";
 import logo from '../../img/logo-white.png';
+import FilledButton from "../reusableElements/filledButton/FilledButton";
 
 const Header = (): ReactElement => {
 	return (
@@ -22,12 +22,7 @@ const Header = (): ReactElement => {
 						is where life happens
 					</div>
 				</h1>
-				<Link
-					to="#"
-					className={`${Styles.btn} ${Styles["btn--white"]} ${Styles["btn--animated"]}`}
-				>
-					Discover our tours
-				</Link>
+				<FilledButton address="#" color="white" text="Discover our tours"  />
 			</div>
 		</header>
 	);

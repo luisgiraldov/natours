@@ -114,3 +114,43 @@ $gutter-horizontal: 2rem;
 		@content;
 	}
 }
+
+/* ================================= 
+    Animations
+==================================== */
+
+@keyframes moveInFromLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-10rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
+@keyframes moveInFromRight {
+	0% {
+		opacity: 0;
+		transform: translateX(10rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
+@keyframes moveInFromBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(10rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
