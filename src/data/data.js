@@ -12,3 +12,26 @@ export const aboutData = [
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nemo quibusdam earum dolorum, inventore laborum molestiae itaque veritatis laboriosam repellat aspernatur obcaecati, nisi consequatur minus. Reprehenderit id aspernatur adipisci earum?",
 	},
 ];
+
+export const featuresData = [
+	{
+		id: 3,
+		title: "Explore the world",
+		paragraph: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur totam in consequuntur sequi?"
+	},
+	{
+		id: 4,
+		title: "Meet nature",
+		paragraph: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur totam in consequuntur sequi?"
+	},
+	{
+		id: 5,
+		title: "Find your way",
+		paragraph: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur totam in consequuntur sequi?"
+	},
+	{
+		id: 6,
+		title: "Live a healthier life",
+		paragraph: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur totam in consequuntur sequi?"
+	}
+]

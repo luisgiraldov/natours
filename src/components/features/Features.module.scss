@@ -1,0 +1,36 @@
+@use "../../mixin.scss" as mixin;
+
+.section-features {
+	padding: 20rem 1.5rem;
+	background-image: linear-gradient(
+			to right bottom,
+			rgba(mixin.$color-blue-for-gradient, 0.8),
+			rgba(mixin.$color-light-black, 0.8)
+		),
+		url(../../img/nat-4.jpg);
+	background-size: cover;
+	background-position: top;
+
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+
+	&__features-container {
+        @include mixin.grid-container;
+
+		@include mixin.desktop {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+    & > * {
+        transform: skewY(7deg);
+    }
+
+    @include mixin.tablet {
+        padding: 20rem 6rem;
+    }
+
+    @include mixin.desktop {
+        padding: 20rem 0;
+    }
+}

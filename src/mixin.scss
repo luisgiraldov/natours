@@ -63,6 +63,30 @@ $grid-gap: 6rem;
 $gutter-vertical: 8rem;
 $gutter-horizontal: 2rem;
 
+@mixin grid-container {
+	margin: 0 auto;
+	max-width: $grid-width;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: $grid-gap;
+}
+
+/* ================================= 
+    Gradient For Font
+==================================== */
+@mixin font-gradient {
+	// text with gradient color
+	display: inline-block;
+	background-image: linear-gradient(
+		to right,
+		rgba($color-light-sky-blue, 0.8),
+		rgba($color-dark-powder-blue, 0.8)
+	);
+	-webkit-background-clip: text;
+	color: transparent;
+	//end text with gradient color
+}
+
 /* ================================= 
     Media Queries
 ==================================== */
