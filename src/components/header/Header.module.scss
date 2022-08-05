@@ -5,12 +5,14 @@
 	height: 95vh;
 	background-image: linear-gradient(
 			to right bottom,
-			rgba(mixin.$color-blue-for-gradient, 0.8),
-			rgba(mixin.$color-light-black, 0.8)
+			rgba(mixin.$color-primary-light, 0.8),
+			rgba(mixin.$color-primary-dark, 0.8)
 		),
 		url(../../img/hero.jpg);
 	background-size: cover;
 	background-position: top;
+	 //clip-path doesn't work on IE or Edge
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
 	display: grid;

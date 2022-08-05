@@ -1,17 +1,17 @@
 import { ReactElement } from "react";
 import Styles from "./About.module.scss";
 import { aboutData } from "../../data/data";
-import HeadingSecondary from "../reusableElements/headingSecondary/HeadingSecondary";
-import HeadingTertiary from "../reusableElements/headingTertiary/HeadingTertiary";
 import nature1 from "../../img/nat-1-large.jpg";
 import nature2 from "../../img/nat-2-large.jpg";
 import nature3 from "../../img/nat-3-large.jpg";
+import HeadingSecondary from "../reusableElements/headingSecondary/HeadingSecondary";
+import HeadingTertiary from "../reusableElements/headingTertiary/HeadingTertiary";
 import GhostButton from "../reusableElements/ghostButton/GhostButton";
 
 const About = (): ReactElement => {
 	return (
 		<section className={`${Styles["section-about"]}`}>
-			<div className={`${Styles["section-about__title--container"]}`}>
+			<div className={`${Styles["section-about__title--container"]} u-center-text`}>
 				<HeadingSecondary title="Exciting tours for adventurous people" />
 			</div>
 			<div className={`${Styles["section-about__content--container"]}`}>

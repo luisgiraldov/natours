@@ -35,3 +35,39 @@ export const featuresData = [
 		paragraph: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur totam in consequuntur sequi?"
 	}
 ]
+
+export const toursData = [
+	{
+		id: 7,
+		title: "The sea explorer",
+		details: {
+			days: "3 days tour",
+			people: "Up to 30 people",
+			tourGuides: "2 tour guides",
+			hotel: "Cozy inn",
+			difficulty: "easy"
+		}
+	},
+	{
+		id: 8,
+		title: "The sea explorer",
+		details: {
+			days: "3 days tour",
+			people: "Up to 30 people",
+			tourGuides: "2 tour guides",
+			hotel: "Cozy inn",
+			difficulty: "easy"
+		}
+	},
+	{
+		id: 9,
+		title: "The sea explorer",
+		details: {
+			days: "3 days tour",
+			people: "Up to 30 people",
+			tourGuides: "2 tour guides",
+			hotel: "Cozy inn",
+			difficulty: "easy"
+		}
+	}
+]

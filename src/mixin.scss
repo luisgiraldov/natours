@@ -32,16 +32,25 @@ Hex: #003396
 RGB: (0, 51, 150)
 */
 
-$color-bg-light-green: #7ed56f;
-$color-bg-medium-green: #55c57a;
-$color-bg-dark-green: #28b485;
 $color-white: #fff;
 $color-light-grey: #f7f7f7;
+$color-medium-grey: #eee;
 $color-dark-grey: #777;
 $color-black: #000;
+
 /*Gradient*/
-$color-blue-for-gradient: #4286f4;
-$color-light-black: #373b44;
+$color-primary-light: #4286f4;
+$color-primary-dark: #373b44;
+
+/*Secondary Gradient*/
+$color-secondary-light:#7ed56f;
+$color-secondary-medium:#55c57a;
+$color-secondary-dark:#28b485;
+
+/*Tertiary Gradient*/
+$color-tertiary-light: #ffb900;
+$color-tertiary-dark: #ff7730;
+
 /* Blue scheme color (light to dark) */
 $color-light-sky-blue: #86cefa;
 $color-aero: #73b9ee;

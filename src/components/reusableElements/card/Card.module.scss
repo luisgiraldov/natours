@@ -1,0 +1,173 @@
+@use "../../../mixin.scss" as mixin;
+
+.card {
+	//perspective to  make the flip card effect more real
+	//perspective must be on the parent
+	perspective: 150rem;
+	-moz-perspective: 150rem;
+	height: 52rem;
+
+	position: relative;
+
+	&__side {
+		//ease to have a smoother animation
+		transition: all 0.8s ease;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		//we need to explicitly add the same height as its parent because of the position absolute, otherwise the perspective won't work
+		//because it wouldn't have a height
+		height: 52rem;
+		//if we set this property to hidden, it hides the back part of the element
+		backface-visibility: hidden;
+		border-radius: 4px;
+		//we hid the overflowing part of the image so we can see the border-radius otherwise they would be squared
+		overflow: hidden;
+		box-shadow: 0 1.5rem 4rem rgba(mixin.$color-black, 0.15);
+
+		&--front {
+			background-color: mixin.$color-white;
+			color: black;
+		}
+
+		&--back {
+			//card flip effect (initial position for back)
+			transform: rotateY(180deg);
+
+			&-primary {
+				background-image: linear-gradient(
+					to right bottom,
+					mixin.$color-primary-light,
+					mixin.$color-primary-dark
+				);
+			}
+
+			&-secondary {
+				background-image: linear-gradient(
+					to right bottom,
+					mixin.$color-secondary-light,
+					mixin.$color-secondary-dark
+				);
+			}
+
+			&-tertiary {
+				background-image: linear-gradient(
+					to right bottom,
+					mixin.$color-tertiary-light,
+					mixin.$color-tertiary-dark
+				);
+			}
+		}
+	}
+
+	&:hover &__side--front {
+		//card flip effect
+		transform: rotateY(-180deg);
+	}
+
+	&:hover &__side--back {
+		//card flip effect
+		transform: rotateY(0);
+	}
+
+	&__picture {
+		background-size: cover;
+		height: 23rem;
+		//works on chrome, safari and firefox, not IE or Edge
+		background-blend-mode: screen;
+		//clip-path doesn't work on IE or Edge
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+		&--1 {
+			background-image: linear-gradient(
+					to right bottom,
+					mixin.$color-primary-light,
+					mixin.$color-primary-dark
+				),
+				url(../../../img/nat-5.jpg);
+		}
+
+		&--2 {
+			background-image: linear-gradient(
+					to right bottom,
+					mixin.$color-tertiary-light,
+					mixin.$color-tertiary-dark
+				),
+				url(../../../img/nat-5.jpg);
+		}
+
+		&--3 {
+			background-image: linear-gradient(
+					to right bottom,
+					mixin.$color-secondary-light,
+					mixin.$color-secondary-dark
+				),
+				url(../../../img/nat-5.jpg);
+		}
+	}
+
+	&__heading {
+		font-size: 2.8rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		color: mixin.$color-white;
+		position: absolute;
+		top: 11rem;
+		right: 2rem;
+		text-align: right;
+        width: 75%;
+
+		&-span {
+            padding: 1rem 1.5rem;
+            //without this, the second row of the title won't get padding at the beginning of the word
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+
+			&--1 {
+				background-image: linear-gradient(
+					to right bottom,
+					rgba(mixin.$color-primary-light, 0.85),
+					rgba(mixin.$color-primary-dark, 0.85)
+				);
+			}
+
+			&--2 {
+				background-image: linear-gradient(
+					to right bottom,
+					rgba(mixin.$color-tertiary-light, 0.85),
+					rgba(mixin.$color-tertiary-dark, 0.85)
+				);
+			}
+
+			&--3 {
+				background-image: linear-gradient(
+					to right bottom,
+					rgba(mixin.$color-secondary-light, 0.85),
+					rgba(mixin.$color-secondary-dark, 0.85)
+				);
+			}
+		}
+	}
+
+	&__details {
+		padding: 3rem;
+		ul {
+			list-style: none;
+			width: 80%;
+			margin: .7rem auto;
+			padding: 0;
+			li {
+				text-align: center;
+				font-size: 1.5rem;
+				padding: 1rem;
+
+				&:not(:last-child) {
+					border-bottom: 1px solid mixin.$color-medium-grey;
+				}
+			}
+		}
+	}
+}

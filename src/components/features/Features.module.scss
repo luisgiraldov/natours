@@ -4,8 +4,8 @@
 	padding: 20rem 1.5rem;
 	background-image: linear-gradient(
 			to right bottom,
-			rgba(mixin.$color-blue-for-gradient, 0.8),
-			rgba(mixin.$color-light-black, 0.8)
+			rgba(mixin.$color-primary-light, 0.8),
+			rgba(mixin.$color-primary-dark, 0.8)
 		),
 		url(../../img/nat-4.jpg);
 	background-size: cover;
