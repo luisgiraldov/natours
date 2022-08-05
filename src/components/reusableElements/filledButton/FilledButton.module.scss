@@ -15,6 +15,11 @@
 		color: mixin.$color-dark-grey;
 	}
 
+	&--blue {
+		background-color: mixin.$color-primary-light;
+		color: mixin.$color-white;
+	}
+
 	&--animated {
 		@include mixin.desktop {
 			/* animation call */
@@ -39,11 +44,6 @@
 		}
 		//end of animation
 
-		&--white {
-			background-color: mixin.$color-white;
-			color: mixin.$color-dark-grey;
-		}
-
 		/* Expanding animation for button */
 		&::after {
 			content: "";
@@ -59,7 +59,11 @@
 		}
 
 		&--white::after {
-			background-color: white;
+			background-color: mixin.$color-white;
+		}
+
+		&--blue::after {
+			background-color: mixin.$color-primary-light;
 		}
 
 		&:hover::after {

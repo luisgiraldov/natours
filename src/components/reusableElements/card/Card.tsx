@@ -1,4 +1,5 @@
 import { FC, ReactElement } from "react";
+import FilledButton from "../filledButton/FilledButton";
 import Styles from "./Card.module.scss";
 
 interface Details {
@@ -14,7 +15,8 @@ const Card: FC<{
 	cardNumber: string;
 	title: string;
 	details: Details;
-}> = ({ color, cardNumber, title, details }): ReactElement => {
+	price: string;
+}> = ({ color, cardNumber, title, details, price }): ReactElement => {
 	return (
 		<div className={`${Styles.card}`}>
 			<div
@@ -49,7 +51,17 @@ const Card: FC<{
 					Styles["card__side--back"]
 				} ${Styles[`card__side--back-${color}`]}`}
 			>
-				Back
+				<div className={`${Styles["card__cta"]}`}>
+					<div className={`${Styles["card__price-box"]}`}>
+						<p className={Styles["card__price-only"]}>Only</p>
+						<p className={Styles["card__price-value"]}>${price}</p>
+						<FilledButton
+							address="#"
+							color="white"
+							text="Book now!"
+						/>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

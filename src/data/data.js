@@ -39,13 +39,13 @@ export const featuresData = [
 export const toursData = [
 	{
 		id: 7,
-		title: "The sea explorer",
+		title: "The snow adventurer",
 		details: {
-			days: "3 days tour",
-			people: "Up to 30 people",
-			tourGuides: "2 tour guides",
-			hotel: "Cozy inn",
-			difficulty: "easy"
+			days: "5 days tour",
+			people: "Up to 15 people",
+			tourGuides: "3 tour guides",
+			hotel: "Sleep in provided tents",
+			difficulty: "Hard"
 		}
 	},
 	{
@@ -56,18 +56,18 @@ export const toursData = [
 			people: "Up to 30 people",
 			tourGuides: "2 tour guides",
 			hotel: "Cozy inn",
-			difficulty: "easy"
+			difficulty: "Easy"
 		}
 	},
 	{
 		id: 9,
-		title: "The sea explorer",
+		title: "The forest killer",
 		details: {
-			days: "3 days tour",
-			people: "Up to 30 people",
-			tourGuides: "2 tour guides",
-			hotel: "Cozy inn",
-			difficulty: "easy"
+			days: "7 days tour",
+			people: "Up to 40 people",
+			tourGuides: "6 tour guides",
+			hotel: "Sleep in provided tents",
+			difficulty: "Medium"
 		}
 	}
 ]
