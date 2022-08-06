@@ -4,6 +4,7 @@ import Header from "./components/header/Header";
 import About from "./components/about/About";
 import Features from "./components/features/Features";
 import Tours from "./components/tours/Tours";
+import Stories from "./components/stories/Stories";
 
 function App(): ReactElement {
 	return (
@@ -13,6 +14,7 @@ function App(): ReactElement {
 				<About />
 				<Features />
 				<Tours />
+				<Stories />
 			</main>
 		</div>
 	);

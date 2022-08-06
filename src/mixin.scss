@@ -80,6 +80,10 @@ $gutter-horizontal: 2rem;
 	gap: $grid-gap;
 }
 
+@mixin adjust-top-corners {
+	margin-top: -12rem;
+}
+
 /* ================================= 
     Gradient For Font
 ==================================== */

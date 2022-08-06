@@ -71,3 +71,18 @@ export const toursData = [
 		}
 	}
 ]
+
+export const storiesData = [
+	{
+		id: 10,
+		author: "Gloria Prichett",
+		title: "It was the best vacation I've had",
+		text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui, ipsum sapiente aspernatur libero repellat quis consequatur ducimus.",
+	},
+	{
+		id: 11,
+		author: "Phil Dunphy",
+		title: "The trip was amazing!",
+		text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui, ipsum sapiente aspernatur libero repellat quis consequatur ducimus.",
+	},
+];

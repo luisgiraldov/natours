@@ -1,0 +1,71 @@
+@use "../../../mixin.scss" as mixin;
+
+.story {
+	width: 75%;
+	margin: 0 auto;
+    margin-bottom: 8rem;
+	box-shadow: 0 3rem 6rem rgba(mixin.$color-black, 0.1);
+	background-color: rgba(mixin.$color-white, .6);
+	border-radius: 3px;
+	padding: 6rem;
+	padding-left: 9rem;
+	font-size: mixin.$default-font-size;
+	transform: skewX(-12deg);
+
+	&__shape {
+		position: relative;
+		width: 15rem;
+		height: 15rem;
+		//text to float around the shape
+		float: left;
+		-webkit-shape-outside: circle(50% at 50% 50%);
+		shape-outside: circle(50% at 50% 50%);
+		//shape
+		-webkit-clip-path: circle(50% at 50% 50%);
+		clip-path: circle(50% at 50% 50%);
+		//space between shape and text and we do the opposite skew direction so the image goes to the initial position
+		transform: translateX(-3rem) skewX(12deg);
+        //fixes glitch that draws a line on the right corner of the shape
+        overflow: hidden;
+	}
+
+	&__img {
+		height: 100%;
+		//center image and scale it
+		transform: translateX(-4rem) scale(1.4);
+        // backface-visibility: hidden;
+        transition: all 0.5s;
+	}
+
+	&__text {
+		//we do the opposite direction so the text goes to the initial position
+		transform: skewX(12deg);
+	}
+
+	&__caption {
+		//text animation for caption name (initial state
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, 20%);
+		color: mixin.$color-white;
+		text-transform: uppercase;
+		font-size: 1.7rem;
+		text-align: center;
+		opacity: 0;
+        //fixes glitch at the end of animation
+		backface-visibility: hidden;
+		transition: all 0.5s;
+	}
+
+	&:hover &__caption {
+		//text animation for caption name
+		opacity: 1;
+		transform: translate(-50%, -50%); 
+	}
+
+	&:hover &__img {
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px);
+	}
+}
