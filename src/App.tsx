@@ -5,6 +5,7 @@ import About from "./components/about/About";
 import Features from "./components/features/Features";
 import Tours from "./components/tours/Tours";
 import Stories from "./components/stories/Stories";
+import Booking from "./components/booking/Booking";
 
 function App(): ReactElement {
 	return (
@@ -15,6 +16,7 @@ function App(): ReactElement {
 				<Features />
 				<Tours />
 				<Stories />
+				<Booking />
 			</main>
 		</div>
 	);
