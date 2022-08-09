@@ -59,6 +59,7 @@ const Card: FC<{
 							address="#"
 							color="white"
 							text="Book now!"
+							linkBtn={true}
 						/>
 					</div>
 				</div>

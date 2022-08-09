@@ -2,10 +2,11 @@ import { FC, ReactElement } from "react";
 import Button from "../button/Button";
 import Styles from "./FilledButton.module.scss";
 
-const FilledButton: FC<{ address: string; color: string; text: string }> = ({
+const FilledButton: FC<{ address: string; color: string; text: string, linkBtn: boolean }> = ({
 	address,
 	color,
 	text,
+	linkBtn
 }): ReactElement => {
 	return (
 		<Button
@@ -14,6 +15,7 @@ const FilledButton: FC<{ address: string; color: string; text: string }> = ({
 				Styles["btn--animated"]
 			}`}
 			text={text}
+			linkBtn={linkBtn}
 		/>
 	);
 };

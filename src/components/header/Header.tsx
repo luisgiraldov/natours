@@ -26,6 +26,7 @@ const Header = (): ReactElement => {
 					address="#"
 					color="white"
 					text="Discover our tours"
+					linkBtn={true}
 				/>
 			</div>
 		</header>

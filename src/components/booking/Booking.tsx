@@ -33,7 +33,7 @@ const Booking = ():ReactElement => {
                         </div>
                         <div className={Styles["form__group"]}>
                             <div className={Styles["form__submit-button--container"]}>
-                                <FilledButton address="" color="blue" text="Next steps &rarr;" />
+                                <FilledButton address="" color="blue" text="Next steps &rarr;" linkBtn={false} />
                             </div>
                         </div>
                     </form>

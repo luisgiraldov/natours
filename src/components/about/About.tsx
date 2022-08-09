@@ -25,7 +25,7 @@ const About = (): ReactElement => {
 						paragraph={aboutData[1].paragraph}
 					/>
 					{/* &rarr is arrow special character for more go to https://css-tricks.com/snippets/html/glyphs/*/}
-					<GhostButton address="#" text="Learn more &rarr;" />
+					<GhostButton address="#" text="Learn more &rarr;" linkBtn={true} />
 				</div>
 				<div className={`${Styles["about-image-composition"]}`}>
 					<div className={`${Styles.composition}`}>

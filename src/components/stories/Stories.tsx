@@ -27,7 +27,7 @@ const Stories = (): ReactElement => {
             <Story data={storiesData[0]} picture={user1Pic} />
             <Story data={storiesData[1]} picture={user2Pic} />
             <div className={`${Styles["section-stories__button-container"]} u-center-text`}>
-                <GhostButton address="#" text="Read all stories &rarr;" />
+                <GhostButton address="#" text="Read all stories &rarr;" linkBtn={true} />
             </div>
         </section>
     );

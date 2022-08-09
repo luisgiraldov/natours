@@ -41,6 +41,7 @@ const Tours = (): ReactElement => {
 					address="#"
 					color="blue"
 					text="Discover our tours"
+					linkBtn={true}
 				/>
 			</div>
 		</section>
