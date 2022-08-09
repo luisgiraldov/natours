@@ -1,24 +1,23 @@
 @use "../../mixin.scss" as mixin;
 
 .section-stories {
-    padding: 15rem 0;
-    position: relative;
-    overflow: hidden;
+	padding: 15rem 0;
+	position: relative;
+	overflow: hidden;
 
-    &__bg-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        z-index: -10;
-        opacity: .4;
+	&__bg-video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: -10;
+		opacity: 0.15;
 
-        &--content {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-
-    }
+		&--content {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+	}
 }

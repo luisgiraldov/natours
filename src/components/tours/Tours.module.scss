@@ -1,11 +1,11 @@
 @use "../../mixin.scss" as mixin;
 
 .section-tours {
-    background-color: mixin.$color-light-grey;
+	background-color: mixin.$color-light-grey;
 	padding: 25rem 1.5rem;
-    @include mixin.adjust-top-corners;
+	@include mixin.adjust-top-corners;
 
-    &__content--container {
+	&__content--container {
 		@include mixin.grid-container;
 
 		@include mixin.desktop {
@@ -13,7 +13,7 @@
 		}
 	}
 
-    @include mixin.tablet {
+	@include mixin.tablet {
 		padding: 25rem 6rem;
 	}
 
