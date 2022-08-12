@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, forwardRef } from "react";
 import Styles from "./About.module.scss";
 import { aboutData } from "../../data/data";
 import nature1 from "../../img/nat-1-large.jpg";
@@ -8,9 +8,9 @@ import HeadingSecondary from "../reusableElements/headingSecondary/HeadingSecond
 import HeadingTertiary from "../reusableElements/headingTertiary/HeadingTertiary";
 import GhostButton from "../reusableElements/ghostButton/GhostButton";
 
-const About = (): ReactElement => {
+const About = forwardRef<HTMLElement>((props, ref): ReactElement => {
 	return (
-		<section className={`${Styles["section-about"]}`}>
+		<section className={`${Styles["section-about"]}`} ref={ref}>
 			<div className={`${Styles["section-about__title--container"]} u-center-text`}>
 				<HeadingSecondary title="Exciting tours for adventurous people" />
 			</div>
@@ -49,6 +49,6 @@ const About = (): ReactElement => {
 			</div>
 		</section>
 	);
-};
+});
 
 export default About;

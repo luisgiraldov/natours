@@ -1,11 +1,11 @@
-import { ReactElement } from "react";
+import { ReactElement, forwardRef } from "react";
 import Styles from "./Features.module.scss";
 import FeatureBox from "../reusableElements/featureBox/FeatureBox";
 import { featuresData } from "../../data/data";
 
-const Features = (): ReactElement => {
+const Features = forwardRef<HTMLElement>((props, ref): ReactElement => {
 	return (
-		<section className={`${Styles["section-features"]}`}>
+		<section className={`${Styles["section-features"]}`} ref={ref}>
 			<div
 				className={`${Styles["section-features__features-container"]}`}
 			>
@@ -32,6 +32,6 @@ const Features = (): ReactElement => {
 			</div>
 		</section>
 	);
-};
+});
 
 export default Features;

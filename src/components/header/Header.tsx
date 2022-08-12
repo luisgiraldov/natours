@@ -1,11 +1,12 @@
-import { ReactElement } from "react";
+import { ReactElement, forwardRef } from "react";
 import Styles from "./Header.module.scss";
 import logo from "../../img/logo-white.png";
 import FilledButton from "../reusableElements/filledButton/FilledButton";
 
-const Header = (): ReactElement => {
+// we use forwardRef to send the ref element to app and connect to the useRef
+const Header = forwardRef<HTMLElement>((props, ref): ReactElement => {
 	return (
-		<header className={`${Styles.header}`}>
+		<header className={`${Styles.header}`} ref={ref}>
 			<div className={`${Styles["header__logo-box"]}`}>
 				<img
 					src={logo}
@@ -31,6 +32,6 @@ const Header = (): ReactElement => {
 			</div>
 		</header>
 	);
-};
+});
 
 export default Header;

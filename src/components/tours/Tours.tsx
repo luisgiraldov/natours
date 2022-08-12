@@ -1,13 +1,13 @@
-import { ReactElement } from "react";
+import { ReactElement, forwardRef } from "react";
 import Styles from "./Tours.module.scss";
 import HeadingSecondary from "../reusableElements/headingSecondary/HeadingSecondary";
 import Card from "../reusableElements/card/Card";
 import { toursData } from "../../data/data";
 import FilledButton from "../reusableElements/filledButton/FilledButton";
 
-const Tours = (): ReactElement => {
+const Tours = forwardRef<HTMLElement>((props, ref): ReactElement => {
 	return (
-		<section className={`${Styles["section-tours"]}`}>
+		<section className={`${Styles["section-tours"]}`} ref={ref}>
 			<div
 				className={`${Styles["section-tours__title--container"]} u-center-text`}
 			>
@@ -46,6 +46,6 @@ const Tours = (): ReactElement => {
 			</div>
 		</section>
 	);
-};
+});
 
 export default Tours;

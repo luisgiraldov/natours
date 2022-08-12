@@ -1,11 +1,11 @@
-import { ReactElement } from "react";
+import { ReactElement, forwardRef } from "react";
 import Styles from "./Booking.module.scss";
 import HeadingSecondary from "../reusableElements/headingSecondary/HeadingSecondary";
 import FilledButton from "../reusableElements/filledButton/FilledButton";
 
-const Booking = (): ReactElement => {
+const Booking = forwardRef<HTMLElement>((props, ref): ReactElement => {
 	return (
-		<section className={Styles["section-booking"]}>
+		<section className={Styles["section-booking"]} ref={ref}>
 			<div className={Styles["section-booking__shape--container"]}>
 				<div className={Styles["section-booking__form"]}>
 					<HeadingSecondary title="Start booking now" />
@@ -94,6 +94,6 @@ const Booking = (): ReactElement => {
 			</div>
 		</section>
 	);
-};
+});
 
 export default Booking;

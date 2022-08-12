@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, forwardRef } from "react";
 import Story from "../reusableElements/story/Story";
 import HeadingSecondary from "../reusableElements/headingSecondary/HeadingSecondary";
 import GhostButton from "../reusableElements/ghostButton/GhostButton";
@@ -10,9 +10,9 @@ import videoMP4 from "../../img/video.mp4";
 import videoWebm from "../../img/video.webm";
 import nature from "../../img/nat-1-large.jpg";
 
-const Stories = (): ReactElement => {
+const Stories = forwardRef<HTMLElement>((props, ref): ReactElement => {
 	return (
-		<section className={Styles["section-stories"]}>
+		<section className={Styles["section-stories"]} ref={ref}>
 			<div className={Styles["section-stories__bg-video"]}>
 				<video
 					className={Styles["section-stories__bg-video--content"]}
@@ -44,6 +44,6 @@ const Stories = (): ReactElement => {
 			</div>
 		</section>
 	);
-};
+});
 
 export default Stories;

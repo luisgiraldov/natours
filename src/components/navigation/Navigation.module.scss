@@ -1,0 +1,155 @@
+@use "../../mixin.scss" as mixin;
+
+.navigation__checkbox {
+	display: none;
+
+	//hack to display menu background clicking on label that points to the input check
+	&:checked ~ .navigation__background {
+		transform: scale(80);
+	}
+
+	//hack to display nav clicking on label that points to the input check
+	&:checked ~ .navigation {
+		opacity: 1;
+		width: 100%;
+
+		& .navigation__list-item {
+			//this to bring back the list items that were far from the viewport width
+			transform: translateX(0);
+		}
+	}
+
+	// menu icon animation
+	&:checked + .navigation__button > .navigation__button-icon {
+		background-color: transparent;
+	}
+
+	// menu icon animation
+	&:checked + .navigation__button > .navigation__button-icon::before {
+		top: 0;
+		transform: rotate(135deg);
+	}
+
+	// menu icon animation
+	&:checked + .navigation__button > .navigation__button-icon::after {
+		top: 0;
+		transform: rotate(-135deg);
+	}
+}
+
+.navigation__button {
+	background-color: mixin.$color-white;
+	height: 7rem;
+	width: 7rem;
+	border-radius: 50%;
+	position: fixed;
+	top: 6rem;
+	right: 6rem;
+	z-index: 10000;
+	box-shadow: 0 1rem 3rem rgba(mixin.$color-black, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: all 0.4s;
+	&:hover {
+		transform: translateY(-0.2rem);
+	}
+
+	&-icon {
+		position: relative;
+
+		&,
+		&::before,
+		&::after {
+			width: 3rem;
+			height: 2px; //we don't want this to change no matter the font size
+			background-color: mixin.$color-dark-grey-3;
+			display: inline-block;
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			//to animate the X icon
+			transition: all 0.2s;
+		}
+
+		&::before {
+			top: -1rem;
+		}
+
+		&::after {
+			top: 1rem;
+		}
+	}
+}
+
+.navigation__background {
+	height: 6rem;
+	width: 6rem;
+	border-radius: 50%;
+	position: fixed;
+	top: 6.5rem;
+	right: 6.5rem;
+	background-image: radial-gradient(
+		mixin.$color-primary-light,
+		mixin.$color-primary-dark
+	);
+	z-index: 1000;
+	//cubic-bezier easeInOutQuint easings.net
+	transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.navigation {
+	height: 100vh;
+	//width and opacity for animation
+	width: 0;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 5000;
+
+	//cubic-bezier easeInOutBack easings.net
+	transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+	&__list {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__list-item {
+		font-size: 3rem;
+		font-weight: 300;
+		color: mixin.$color-white;
+		text-decoration: none;
+		text-transform: uppercase;
+		margin: 0.5rem;
+		padding: 1rem 6rem;
+
+		//move the list items far from the viewport width, by doing this we avoid clicking on them and trigger a smooth scroll
+		transform: translateX(500%);
+
+		//fade in from right li element animation
+		background-image: linear-gradient(
+			120deg,
+			transparent 0%,
+			transparent 50%,
+			mixin.$color-white 50%
+		);
+		background-size: 250%;
+		transition: all 0.6s;
+
+		&:hover {
+			background-position: 100%;
+			color: mixin.$color-primary-light;
+			transform: translateX(-2rem);
+		}
+	}
+}
