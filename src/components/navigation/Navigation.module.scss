@@ -45,7 +45,7 @@
 	position: fixed;
 	top: 6rem;
 	right: 6rem;
-	z-index: 10000;
+	z-index: 2000;
 	box-shadow: 0 1rem 3rem rgba(mixin.$color-black, 0.5);
 	display: flex;
 	justify-content: center;
@@ -111,7 +111,7 @@
 	position: fixed;
 	top: 0;
 	right: 0;
-	z-index: 5000;
+	z-index: 1500;
 
 	//cubic-bezier easeInOutBack easings.net
 	transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);

@@ -1,12 +1,14 @@
 import { FC, ReactElement } from "react";
 import Button from "../button/Button";
 import Styles from "./FilledButton.module.scss";
+import { ButtonCallbackType } from "../button/Button";
 
-const FilledButton: FC<{ address: string; color: string; text: string, linkBtn: boolean }> = ({
+const FilledButton: FC<{ address: string; color: string; text: string, linkBtn: boolean, onClick?: ButtonCallbackType }> = ({
 	address,
 	color,
 	text,
-	linkBtn
+	linkBtn,
+	onClick = undefined  
 }): ReactElement => {
 	return (
 		<Button
@@ -16,6 +18,7 @@ const FilledButton: FC<{ address: string; color: string; text: string, linkBtn: 
 			}`}
 			text={text}
 			linkBtn={linkBtn}
+			onClick={onClick}
 		/>
 	);
 };

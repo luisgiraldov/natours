@@ -1,4 +1,4 @@
-import React, { ReactElement, useRef } from "react";
+import { ReactElement, useRef } from "react";
 import "./App.scss";
 import Navigation from "./components/navigation/Navigation";
 import Header from "./components/header/Header";

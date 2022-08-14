@@ -86,3 +86,12 @@ export const storiesData = [
 		text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui, ipsum sapiente aspernatur libero repellat quis consequatur ducimus.",
 	},
 ];
+
+export const popupData = [
+	{
+		id: 12,
+		title: "Important - Please read this terms before booking",
+		paragraph:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur a nesciunt nobis dicta mollitia quidem sed sequi, quisquam sapiente amet delectus tempora, quo earerum facilis ducimus quia itaque velit?",
+	},
+];

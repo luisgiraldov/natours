@@ -1,6 +1,7 @@
 import { FC, ReactElement } from "react";
 import FilledButton from "../filledButton/FilledButton";
 import Styles from "./Card.module.scss";
+import { ButtonCallbackType } from "../button/Button";
 
 interface Details {
 	days: string;
@@ -16,7 +17,8 @@ const Card: FC<{
 	title: string;
 	details: Details;
 	price: string;
-}> = ({ color, cardNumber, title, details, price }): ReactElement => {
+	onClick?: ButtonCallbackType
+}> = ({ color, cardNumber, title, details, price, onClick = undefined }): ReactElement => {
 	return (
 		<div className={`${Styles.card}`}>
 			<div
@@ -59,7 +61,8 @@ const Card: FC<{
 							address="#"
 							color="white"
 							text="Book now!"
-							linkBtn={true}
+							linkBtn={false}
+							onClick={onClick}
 						/>
 					</div>
 				</div>
