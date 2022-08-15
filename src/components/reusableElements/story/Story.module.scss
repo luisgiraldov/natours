@@ -1,16 +1,27 @@
 @use "../../../mixin.scss" as mixin;
 
 .story {
-	width: 75%;
+	width: 95%;
 	margin: 0 auto;
     margin-bottom: 8rem;
 	box-shadow: 0 3rem 6rem rgba(mixin.$color-black, 0.1);
 	background-color: rgba(mixin.$color-white, .6);
 	border-radius: 3px;
-	padding: 6rem;
-	padding-left: 9rem;
+	padding: 2rem;
+	padding-left: 5rem;
 	font-size: mixin.$default-font-size;
-	transform: skewX(-12deg);
+
+	@include mixin.tablet {
+		padding: 4rem;
+		padding-left: 7rem;
+		transform: skewX(-12deg);
+	}
+
+	@include mixin.desktop {
+		width: 75%;
+		padding: 6rem;
+		padding-left: 9rem;
+	}
 
 	&__shape {
 		position: relative;
@@ -23,10 +34,15 @@
 		//shape
 		-webkit-clip-path: circle(50% at 50% 50%);
 		clip-path: circle(50% at 50% 50%);
-		//space between shape and text and we do the opposite skew direction so the image goes to the initial position
-		transform: translateX(-3rem) skewX(12deg);
+		//space between shape and text
+		transform: translateX(-3rem) skewX(0);
         //fixes glitch that draws a line on the right corner of the shape
         overflow: hidden;
+
+		@include mixin.tablet {
+			//space between shape and text and we do the opposite skew direction so the image goes to the initial position
+			transform: translateX(-3rem) skewX(12deg);
+		}
 	}
 
 	&__img {
@@ -38,8 +54,11 @@
 	}
 
 	&__text {
-		//we do the opposite direction so the text goes to the initial position
-		transform: skewX(12deg);
+
+		@include mixin.tablet {
+			//we do the opposite direction so the text goes to the initial position
+			transform: skewX(12deg);
+		}
 	}
 
 	&__caption {
