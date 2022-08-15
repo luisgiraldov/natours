@@ -16,8 +16,20 @@
 
 	&__content {
 		@include mixin.grid-container;
-		grid-template-columns: 1fr 1fr;
-		justify-items: center;
+		grid-template-columns: 1fr;
+
+		@include mixin.tablet {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@include mixin.up-to-tablet {
+			padding: 0 3rem;
+		}
+
+		@include mixin.desktop {
+			justify-items: center;
+		}
+		
 	}
 
 	&__navigation {
@@ -26,8 +38,6 @@
 	}
 
 	&__list {
-		// display: grid;
-		// grid-template-columns: repeat(5, 1fr);
 		list-style: none;
 	}
 
@@ -35,6 +45,10 @@
 		display: inline-block;
 		&:not(:last-child) {
 			margin-right: 2rem;
+		}
+
+		@include mixin.only-phones {
+			display: block;
 		}
 	}
 

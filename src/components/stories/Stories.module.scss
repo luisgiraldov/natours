@@ -5,6 +5,10 @@
 	position: relative;
 	overflow: hidden;
 
+	@include mixin.only-tablet {
+		padding: 15rem 5rem;
+	}
+
 	&__bg-video {
 		position: absolute;
 		top: 0;

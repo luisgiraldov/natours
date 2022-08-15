@@ -12,24 +12,42 @@
 		@include mixin.grid-container;
 		//booking sliced effect
 		background-image: linear-gradient(
-				105deg,
+				to right,
 				rgba(mixin.$color-white, 0.9) 0%,
-				rgba(mixin.$color-white, 0.9) 50%,
-				transparent 50%
+				rgba(mixin.$color-white, 0.9) 100%
 			),
 			url(../../img/nat-10.jpg);
 		background-size: cover;
 
 		border-radius: 3px;
 		box-shadow: 0 1.5rem 4rem rgba(mixin.$color-black, 0.8);
-
-		height: 55rem;
 		width: 80%;
+
+		@include mixin.desktop {
+			background-image: linear-gradient(
+				105deg,
+				rgba(mixin.$color-white, 0.9) 0%,
+				rgba(mixin.$color-white, 0.9) 50%,
+				transparent 50%
+			),
+			url(../../img/nat-10.jpg);
+		}
 	}
 
 	&__form {
-		width: 50%;
-		padding: 6rem;
+		width: 100%;
+		padding: 2rem;
+
+		@include mixin.up-to-tablet {
+			h2 {
+				margin-bottom: 2rem;
+			}
+		}
+
+		@include mixin.desktop {
+			width: 50%;
+			padding: 6rem;
+		}
 
 		.form {
 			&__group:not(:last-child) {
@@ -38,7 +56,7 @@
 
 			&__input {
 				display: block;
-				width: 90%;
+				width: 100%;
 				color: inherit;
 				font-size: 1.5rem;
 				font-family: inherit;
@@ -48,6 +66,10 @@
 				background-color: rgba(mixin.$color-white, 0.5);
 				border-bottom: 3px solid transparent;
 				transition: all 0.4s;
+
+				@include mixin.desktop {
+					width: 90%;
+				}
 
 				&:focus {
 					outline: none;
