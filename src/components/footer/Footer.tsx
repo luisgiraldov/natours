@@ -1,16 +1,23 @@
 import { ReactElement } from "react";
 import Styles from "./Footer.module.scss";
-import logo from "../../img/logo-green-2x.png";
+import logo1xSmall from "../../img/logo-green-small-1x.png";
+import logo2xSmall from "../../img/logo-green-small-2x.png";
+import logo1x from "../../img/logo-green-1x.png";
+import logo2x from "../../img/logo-green-2x.png";
 import { Link } from "react-router-dom";
 
 const Footer = (): ReactElement => {
 	return (
 		<footer className={Styles.footer}>
 			<div className={Styles["footer__logo-box"]}>
+				{/* Responsive image (Art direction and density switching) */}
+				<picture className={Styles["footer__logo"]}>
+					<source srcSet={`${logo1xSmall} 1x, ${logo2xSmall} 2x`} media="(max-width: 768px)"></source>
+				</picture>
 				<img
-					src={logo}
+					srcSet={`${logo1x} 1x, ${logo2x} 2x`}
 					alt="Natours' logo"
-					className={Styles["footer__logo"]}
+					src={logo2x}
 				/>
 			</div>
 			<div className={Styles["footer__content"]}>

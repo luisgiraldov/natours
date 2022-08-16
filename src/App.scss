@@ -29,6 +29,11 @@ body {
 	}
 }
 
+::selection {
+	background-color: mixin.$color-primary-light;
+	color: mixin.$color-white;
+}
+
 /* ================================= 
     Utility classes
 ==================================== */

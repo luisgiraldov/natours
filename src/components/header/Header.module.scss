@@ -8,20 +8,27 @@
 			rgba(mixin.$color-primary-light, 0.8),
 			rgba(mixin.$color-primary-dark, 0.8)
 		),
-		url(../../img/hero.jpg);
+		url(../../img/hero-small.jpg);
 	background-size: cover;
 	background-position: top;
-	 //clip-path doesn't work on IE or Edge
+	//clip-path doesn't work on IE or Edge
 	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+	//Responsive images CSS
+	//load bigger image only on bigger resolutions or 2000px wide screen
+	@media (min-resolution: 192dpi) and (min-width: 600px),
+		(min-width: 2000px) {
+		background-image: linear-gradient(
+				to right bottom,
+				rgba(mixin.$color-primary-light, 0.8),
+				rgba(mixin.$color-primary-dark, 0.8)
+			),
+			url(../../img/hero.jpg);
+	}
 
 	display: grid;
 	justify-content: center;
 	align-items: center;
-
-	// @include mixin.desktop {
-	// 	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-	// }
 
 	&__logo-box {
 		position: absolute;
